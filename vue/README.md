@@ -1,38 +1,34 @@
-# vue
+# Library Vue Frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+基于 Vue 3 + Vite 的图书馆前端，包含管理员与普通用户两套功能页面。
 
-## Recommended IDE Setup
+## 已实现功能
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- 登录/注册页面
+- 统一蓝色主题布局（页头 + 左侧导航）
+- 普通用户：图书中心、我的借阅、借书/还书
+- 管理员：用户管理、图书管理、借阅管理、操作日志
+- 路由守卫与基于 `role` 的页面权限控制
 
-## Recommended Browser Setup
+## 目录说明
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- `src/layouts/MainLayout.vue`: 系统主框架（Header + Aside）
+- `src/router/index.js`: 路由与权限守卫
+- `src/stores/auth.js`: 登录状态管理
+- `src/api/`: Axios 接口封装
+- `src/views/`: 各业务页面
 
-## Customize configuration
+## 运行
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+默认通过 Vite 代理请求后端：`/api -> http://localhost:8090`。
 
-```sh
+## 构建
+
+```bash
 npm run build
 ```
